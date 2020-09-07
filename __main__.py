@@ -18,7 +18,7 @@ def main():
     parser.add_argument('-pc', '--pseudocounts', required=False, help="pseudocounts for creating PWM matrix", default=0.8)
     parser.add_argument('-b','--background', required=False, help="background for creating PWM matrix",
                         default={'A': 0.25, 'C': 0.25, 'G': 0.25, 'T': 0.25})
-    parser.add_argument('-dif', '--difference', type=float, required=False, help="minimal absolute difference between ref and alt score", default=5)
+    parser.add_argument('-diff', '--difference', type=float, required=False, help="minimal absolute difference between ref and alt score", default=5)
     parser.add_argument('-min', type=float, required=False, help="minimal search score is smaller then min threshold ")
     parser.add_argument('-max',type=float, required=False, help="maximal search score is bigger then max threshold ")
     parser.add_argument('-rdif',type=float, required=False, help="threshold for ref - alt scores")
@@ -72,7 +72,7 @@ def main():
     defined_filters = {}
 
     if args.dif is not None:
-        defined_filters['difference'] = args.dif
+        defined_filters['difference'] = args.diff
     if args.max is not None:
         defined_filters['max_score'] = args.max
     if args.min is not None:
