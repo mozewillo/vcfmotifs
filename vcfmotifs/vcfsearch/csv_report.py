@@ -1,4 +1,4 @@
-"""Create CSV report for searches"""
+"""Create CSV report for searches"
 
 from vcfmotifs.vcfsearch import read_in
 import pandas as pd
