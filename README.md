@@ -36,6 +36,44 @@ List of filters:
 The tool proposes the adjusting the threshold for each motif, since the scores may vary for long vs. short motifs, and those more or less conserved. 
 The adjustment is based on the upper threshold proportion of change (alt_score divided by ref_score) that user finds interesing for reporting.
 
+```
+usage: pars.py [-h] [-alt ALT] [-ref REF] [-gscr GSCR] [-pc PSEUDOCOUNTS] [-b BACKGROUND] [-diff DIFFERENCE]
+               [-min MIN] [-max MAX] [-rdif RDIF] [-adif ADIF] [-clinvar CLINVAR] -refseq REFSEQ [-multi MULTI]
+               [-html HTML] [-csv CSV]
+               {single,vcf,motif} ...
+
+Specify parameters to run analyses.
+
+positional arguments:
+  {single,vcf,motif}
+    single              search for single variant
+    vcf                 search in VCF file(s)
+    motif               motif JASPAR ID/collection/species
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -alt ALT              search threshold for alternate sequence
+  -ref REF              search threshold for referenced sequence
+  -gscr GSCR            googness of fit value (0-1)
+  -pc PSEUDOCOUNTS, --pseudocounts PSEUDOCOUNTS
+                        pseudocounts for creating PWM matrix
+  -b BACKGROUND, --background BACKGROUND
+                        background for creating PWM matrix
+  -diff DIFFERENCE, --difference DIFFERENCE
+                        minimal absolute difference between ref and alt score
+  -min MIN              minimal search score is smaller then min threshold
+  -max MAX              maximal search score is bigger then max threshold
+  -rdif RDIF            threshold for ref - alt scores
+  -adif ADIF            threshold for alt - ref scores
+  -clinvar CLINVAR      if clinvar info occurs in VCF
+  -refseq REFSEQ        reference sequence for vcf, for human genome type 'hg38' or 'hg37'
+  -multi MULTI          search for neighboring variants
+  -html HTML            output filename for html report
+  -csv CSV              output filename for csv report
+
+```
+
+
 
 **Example of html report** \
 Example of result of search for transcription factor ETV6 binding side variations. (This factor plays a role in hematopoiesis and malignant transformation. See motif: [jaspar motif](http://jaspar.genereg.net/matrix/MA0645.1/)
